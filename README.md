@@ -85,6 +85,20 @@ Abans d'executar els models s'han preprocessat les dades amb les que es treballa
 | PCA (with Linear Regression)| ('n_components', 24) | 0.63 | 200ms |
 | ADA Boosting (with Decision Tree Regressor)| ('n_estimators', 300) | 0.62 | 200ms |
 
+#### Eliminant outliers
+| Model | Hiperparametres | Mètrica (RMSE) | Temps |
+| -- | -- | -- | -- |
+| Decision Tree Regressor | Default | 0.78 | 100ms |
+| Ridge | Default | 0.58 | 1000ms |
+| Lasso | Default | 0.60 | 200ms |
+| Linear Regression| Default | 0.58 | 200ms |
+| XGB Regressor| Default | 0.63 | 200ms |
+| Decision Tree Regressor| ('max_depth', 21), ('max_features', None), ('max_leaf_nodes', 10), ('min_samples_leaf', 8), ('min_weight_fraction_leaf', 0.0), ('splitter', 'best') | 0.60 | 200ms |
+| Ridge| ('alpha', 104) | 0.56 | 200ms |
+| Lasso| ('alpha', 0.1) | 0.57 | 200ms |
+| PCA (with Linear Regression)| ('n_components', 11) | 0.58 | 200ms |
+| ADA Boosting (with Decision Tree Regressor)| ('n_estimators', 300) | 0.60 | 200ms |
+
 
 
 
