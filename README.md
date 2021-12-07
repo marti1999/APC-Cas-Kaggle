@@ -33,3 +33,10 @@ Una altra proba que s'ha portat a terme és l'anomenada "Hyperparameter Search".
 Per intentar millorar més les prediccions, també s'ha implementat mètodes de Boosting. Igual que amb la proba superior, les prediccions han millorat.
 
 Per últim, s'ha intentat ajuntar Boosting amb Hyperparameter Search, però els resultats han sigut pràcticament els mateixos.
+
+### Preprocessat
+Abans d'executar els models s'han preprocessat les dades amb les que es treballarà, tenint com a objectiu millorar les prediccions dels models:
+- Codificació d'atributs: mitjançant "LabelEncoder", s'ha codificat els valors dels atributs categòrics. Les prediccions milloren.
+- Outliers: eliminació d'anomalies als atributs. Les prediccions milloren lleugerament.
+- Escalat de dades: s'ha escalat els valors dels atributs per tal que tots tinguin el mateix pes durant els apenentatges. Fent estandarització les prediccions empitjoren de forma significativa. En canvi, normalitzant els valors les prediccions no semblen ni millorar ni empitjorar. 
+
