@@ -18,4 +18,18 @@ Els principals punts en els que està estructurat el treball són:
 ## Objectius del dataset
 Per una banda es vol veure si, tal i com diu el títol, hi ha relació entre el consum d'alcohol i les notes. Per altra banda es vol predir la nota final d'un alumne basant-se en la resta d'atributs.
 
+## Exeperiments
+Durant aquesta pràctica s'ha fet un seguit de proves i experiments.
+Primer s'han implementat els següents models sense parar atenció als hiperparàmtres, simplement per veure de primeres quin donava més bon resultat.
+1. Decision Tree Regressor:
+2. Ridge
+3. Linear Regression:
+4. Lasso
 
+També s'ha utilitzat el "Principal Component Analysis" per veure fins a quina dimensió es podien reduir les mosters sense perdre capacitat predictiva.
+
+Una altra proba que s'ha portat a terme és l'anomenada "Hyperparameter Search". S'ha utilitzat el mètode "Bayesian Optimization" i els resultats han sigut satisfactoris.
+
+Per intentar millorar més les prediccions, també s'ha implementat mètodes de Boosting. Igual que amb la proba superior, les prediccions han millorat.
+
+Per últim, s'ha intentat ajuntar Boosting amb Hyperparameter Search, però els resultats han sigut pràcticament els mateixos.
