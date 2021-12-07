@@ -49,13 +49,26 @@ Abans d'executar els models s'han preprocessat les dades amb les que es treballa
 | Ridge | Default | 0.65 | 1000ms |
 | Lasso | Default | 0.64 | 200ms |
 | Linear Regression| Default | 0.65 | 200ms |
-| XGB Regressor| Default | 0.7 | 200ms |
-| Decision Tree Regressor| 'max_depth', 25), ('max_features', None), ('max_leaf_nodes', 20), ('min_samples_leaf', 9), ('min_weight_fraction_leaf', 0.0), ('splitter', 'best') | 0.67 | 200ms |
+| XGB Regressor| Default | 0.70 | 200ms |
+| Decision Tree Regressor| ('max_depth', 25), ('max_features', None), ('max_leaf_nodes', 20), ('min_samples_leaf', 9), ('min_weight_fraction_leaf', 0.0), ('splitter', 'best') | 0.67 | 200ms |
 | Ridge| ('alpha', 110) | 0.63 | 200ms |
 | Lasso| ('alpha', 0.1) | 0.62 | 200ms |
 | PCA (with Linear Regression)| ('n_components', 11) | 0.62 | 200ms |
 | ADA Boosting (with Decision Tree Regressor)| ('n_estimators', 300) | 0.62 | 200ms |
 
+#### Eliminant outliers + Normalització
+| Model | Hiperparametres | Mètrica (RMSE) | Temps |
+| -- | -- | -- | -- |
+| Decision Tree Regressor | Default | 0.80 | 100ms |
+| Ridge | Default | 0.59 | 1000ms |
+| Lasso | Default | 1.56 | 200ms |
+| Linear Regression| Default | 0.58 | 200ms |
+| XGB Regressor| Default | 0.63 | 200ms |
+| Decision Tree Regressor| ('max_depth', 30), ('max_features', 'auto'), ('max_leaf_nodes', 40), ('min_samples_leaf', 4), ('min_weight_fraction_leaf', 0.0), ('splitter', 'best') | 0.68 | 200ms |
+| Ridge| ('alpha', 90) | 0.59 | 200ms |
+| Lasso| ('alpha', 0.01) | 0.57 | 200ms |
+| PCA (with Linear Regression)| ('n_components', 30) | 0.62 | 200ms |
+| ADA Boosting (with Decision Tree Regressor)| ('n_estimators', 300) | 0.60 | 200ms |
 
 
 
