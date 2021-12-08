@@ -1,5 +1,8 @@
+import copy
 import os
 import pickle
+
+from sklearn.decomposition import PCA
 from sklearn.metrics import mean_squared_error
 
 import pandas as pd
@@ -12,18 +15,25 @@ def main():
     files = []
     for file in os.listdir("../models"):
         if file.endswith(".sav"):
-            if 'PCA' in str(file):
-                continue
+
             files.append(os.path.join(dir, file))
 
     x_test, y_test = getProcessedData()
 
+    x_test_bak = copy.deepcopy(x_test)
 
     for file in files:
+
+        if 'PCA' in str(file):
+            num =  int(''.join(filter(str.isdigit, str(file))))
+            x_test = PCA(n_components=num).fit_transform(x_test)
+
+
         loaded_model = pickle.load(open(file, 'rb'))
         y_pred = loaded_model.predict(x_test)
         print('\n', file)
         print('RMSE: ', np.sqrt(mean_squared_error(y_test, y_pred))/2)
+        x_test = x_test_bak
 
 
 def detectOutliers(df, atributs, maxOutliers):
