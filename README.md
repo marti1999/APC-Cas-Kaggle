@@ -61,6 +61,8 @@ python3 ./demo/demo.py
 
 ### Model
 
+Tots els resultats mostrats a continuació són fruit de fer un cross validation amb 5 folds.
+
 #### Sense preprocessat de dades
 | Model | Hiperparametres | Mètrica (RMSE) | Temps |
 | -- | -- | -- | -- |
