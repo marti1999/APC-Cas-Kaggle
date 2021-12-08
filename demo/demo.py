@@ -1,7 +1,7 @@
 import copy
 import os
 import pickle
-
+import sys
 from sklearn.decomposition import PCA
 from sklearn.metrics import mean_squared_error
 
@@ -11,9 +11,10 @@ from collections import Counter
 import numpy as np
 
 def main():
-    dir = '../models'
+
+    dir = './models'
     files = []
-    for file in os.listdir("../models"):
+    for file in os.listdir(dir):
         if file.endswith(".sav"):
 
             files.append(os.path.join(dir, file))
@@ -73,7 +74,7 @@ def deleteRowsByIndex(df, indexs):
 
 
 def getProcessedData():
-    db = pd.read_csv("../data/student-por.csv")
+    db = pd.read_csv("./data/student-por.csv")
     db = db.sample(random_state=0, frac=1).reset_index(drop=True)
     db = db.head(40)
 
