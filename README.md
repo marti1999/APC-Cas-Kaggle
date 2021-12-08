@@ -48,7 +48,7 @@ git clone https://github.com/marti1999/APC-Cas-Kaggle.git
 ```
 Anar al directori
 ```bash
-cd PC-Cas-Kaggle
+cd APC-Cas-Kaggle
 ```
 Instal·lar dependències
 ```bash
