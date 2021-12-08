@@ -40,6 +40,11 @@ Abans d'executar els models s'han preprocessat les dades amb les que es treballa
 - Outliers: eliminació d'anomalies als atributs. Les prediccions milloren lleugerament.
 - Escalat de dades: s'ha escalat els valors dels atributs per tal que tots tinguin el mateix pes durant els apenentatges. Fent estandarització les prediccions empitjoren de forma significativa. En canvi, normalitzant els valors les prediccions no semblen ni millorar ni empitjorar. 
 
+### Demo
+Per tal de probar alguns models, es pot utilitzar la següent comanda
+'''python3 -m pip install -r requirements.txt'''
+'''python3 ./demo/demo.py'''
+
 ### Model
 
 #### Sense preprocessat de dades
