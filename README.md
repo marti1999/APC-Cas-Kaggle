@@ -98,7 +98,7 @@ Abans d'executar els models s'han preprocessat les dades amb les que es treballa
 | Lasso| ('alpha', 0.1) | 0.57 | 200ms |
 | PCA (with Linear Regression)| ('n_components', 11) | 0.58 | 200ms |
 | ADA Boosting (with Decision Tree Regressor)| ('n_estimators', 300) | 0.60 | 200ms |
-
+| ADA Boosting (with Decision Tree Regressor)| ADA Boosting = ('n_estimators', 300) & Decision Tree Regressor = ('max_depth', 7), ('max_features', 'auto'), ('max_leaf_nodes', 20), ('min_samples_leaf', 5), ('min_weight_fraction_leaf', 0.0), ('splitter', 'best') | 0.58 | 200ms |
 
 
 
