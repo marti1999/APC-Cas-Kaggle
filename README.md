@@ -25,6 +25,7 @@ Primer s'han implementat els següents models sense parar atenció als hiperpar�
 2. Ridge
 3. Linear Regression:
 4. Lasso
+5. XGB Regressor
 
 També s'ha utilitzat el "Principal Component Analysis" per veure fins a quina dimensió es podien reduir les mosters sense perdre capacitat predictiva.
 
