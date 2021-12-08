@@ -16,7 +16,7 @@ def main():
                 continue
             files.append(os.path.join(dir, file))
 
-    x_train, x_test, y_train, y_test = getProcessedData()
+    x_test, y_test = getProcessedData()
 
 
     for file in files:
@@ -64,6 +64,9 @@ def deleteRowsByIndex(df, indexs):
 
 def getProcessedData():
     db = pd.read_csv("../data/student-por.csv")
+    db = db.sample(random_state=0, frac=1).reset_index(drop=True)
+    db = db.head(40)
+
     from sklearn.preprocessing import LabelEncoder
     le = LabelEncoder()
     for c in db.columns:
@@ -71,13 +74,11 @@ def getProcessedData():
             le.fit(db[c].astype(str))
             db[c] = le.transform(db[c].astype(str))
 
-    db.loc[detectOutliers(db, ["age", "Dalc", "Walc", "absences"], 0)]
     db = deleteRowsByIndex(db, detectOutliers(db, ["age", "Dalc", "Walc", "absences"], 0))
     y = db['G3']
     x = db.drop(columns='G3')
+    return x, y
 
-    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.15, random_state=9)
-    return x_train, x_test, y_train, y_test
 
 
 if __name__ == '__main__':
