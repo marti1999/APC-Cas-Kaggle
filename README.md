@@ -41,7 +41,8 @@ Abans d'executar els models s'han preprocessat les dades amb les que es treballa
 - Escalat de dades: s'ha escalat els valors dels atributs per tal que tots tinguin el mateix pes durant els apenentatges. Fent estandarització les prediccions empitjoren de forma significativa. En canvi, normalitzant els valors les prediccions no semblen ni millorar ni empitjorar. 
 
 ### Demo
-Es pot executar una demo que carrega models prèviament entrenats i prediu dades mai abans vistes
+Es pot executar una demo que carrega models prèviament entrenats i fa prediccions amb dades mai abans vistes.
+
 Clonar el repositori
 ```bash
 git clone https://github.com/marti1999/APC-Cas-Kaggle.git
