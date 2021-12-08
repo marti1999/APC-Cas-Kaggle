@@ -41,9 +41,23 @@ Abans d'executar els models s'han preprocessat les dades amb les que es treballa
 - Escalat de dades: s'ha escalat els valors dels atributs per tal que tots tinguin el mateix pes durant els apenentatges. Fent estandarització les prediccions empitjoren de forma significativa. En canvi, normalitzant els valors les prediccions no semblen ni millorar ni empitjorar. 
 
 ### Demo
-Per tal de probar alguns models, es pot utilitzar la següent comanda
-'''python3 -m pip install -r requirements.txt'''
-'''python3 ./demo/demo.py'''
+Es pot executar una demo que carrega models prèviament entrenats i prediu dades mai abans vistes
+Clonar el repositori
+```bash
+git clone https://github.com/marti1999/APC-Cas-Kaggle.git
+```
+Anar al directori
+```bash
+cd APC-Cas-Kaggle
+```
+Instal·lar dependències
+```bash
+python3 -m pip install -r requirements.txt
+```
+Executar els models
+```bash
+python3 ./demo/demo.py
+```
 
 ### Model
 
@@ -51,59 +65,66 @@ Per tal de probar alguns models, es pot utilitzar la següent comanda
 | Model | Hiperparametres | Mètrica (RMSE) | Temps |
 | -- | -- | -- | -- |
 | Decision Tree Regressor | Default | 0.84 | 100ms |
-| Ridge | Default | 0.65 | 1000ms |
-| Lasso | Default | 0.64 | 200ms |
-| Linear Regression| Default | 0.65 | 200ms |
-| XGB Regressor| Default | 0.70 | 200ms |
-| Decision Tree Regressor| ('max_depth', 25), ('max_features', None), ('max_leaf_nodes', 20), ('min_samples_leaf', 9), ('min_weight_fraction_leaf', 0.0), ('splitter', 'best') | 0.67 | 200ms |
-| Ridge| ('alpha', 110) | 0.63 | 200ms |
-| Lasso| ('alpha', 0.1) | 0.62 | 200ms |
-| PCA (with Linear Regression)| ('n_components', 11) | 0.62 | 200ms |
-| ADA Boosting (with Decision Tree Regressor)| ('n_estimators', 300) | 0.62 | 200ms |
+| Ridge | Default | 0.65 | 80ms |
+| Lasso | Default | 0.64 | 80ms |
+| Linear Regression| Default | 0.65 | 80ms |
+| XGB Regressor| Default | 0.70 | 100ms |
+| Decision Tree Regressor| ('max_depth', 25), ('max_features', None), ('max_leaf_nodes', 20), ('min_samples_leaf', 9), ('min_weight_fraction_leaf', 0.0), ('splitter', 'best') | 0.67 | 50ms |
+| Ridge| ('alpha', 110) | 0.63 | 80ms |
+| Lasso| ('alpha', 0.1) | 0.62 | 80ms |
+| PCA (with Linear Regression)| ('n_components', 11) | 0.62 | 50ms |
+| ADA Boosting (with Decision Tree Regressor)| ('n_estimators', 300) | 0.62 | 1000ms |
 
 #### Eliminant outliers + Normalització
 | Model | Hiperparametres | Mètrica (RMSE) | Temps |
 | -- | -- | -- | -- |
 | Decision Tree Regressor | Default | 0.80 | 100ms |
-| Ridge | Default | 0.59 | 1000ms |
-| Lasso | Default | 1.56 | 200ms |
-| Linear Regression| Default | 0.58 | 200ms |
-| XGB Regressor| Default | 0.63 | 200ms |
-| Decision Tree Regressor| ('max_depth', 30), ('max_features', 'auto'), ('max_leaf_nodes', 40), ('min_samples_leaf', 4), ('min_weight_fraction_leaf', 0.0), ('splitter', 'best') | 0.68 | 200ms |
-| Ridge| ('alpha', 90) | 0.59 | 200ms |
-| Lasso| ('alpha', 0.01) | 0.57 | 200ms |
-| PCA (with Linear Regression)| ('n_components', 30) | 0.62 | 200ms |
-| ADA Boosting (with Decision Tree Regressor)| ('n_estimators', 300) | 0.60 | 200ms |
+| Ridge | Default | 0.59 | 80ms |
+| Lasso | Default | 1.56 | 80ms |
+| Linear Regression| Default | 0.58 | 80ms |
+| XGB Regressor| Default | 0.63 | 100ms |
+| Decision Tree Regressor| ('max_depth', 30), ('max_features', 'auto'), ('max_leaf_nodes', 40), ('min_samples_leaf', 4), ('min_weight_fraction_leaf', 0.0), ('splitter', 'best') | 0.68 | 50ms |
+| Ridge| ('alpha', 90) | 0.59 | 80ms |
+| Lasso| ('alpha', 0.01) | 0.57 | 80ms |
+| PCA (with Linear Regression)| ('n_components', 30) | 0.62 | 50ms |
+| ADA Boosting (with Decision Tree Regressor)| ('n_estimators', 300) | 0.60 | 1000ms |
 
 
 #### Eliminant outliers + Estandarització
 | Model | Hiperparametres | Mètrica (RMSE) | Temps |
 | -- | -- | -- | -- |
 | Decision Tree Regressor | Default | 0.78 | 100ms |
-| Ridge | Default | 0.58 | 1000ms |
-| Lasso | Default | 0.76 | 200ms |
-| Linear Regression| Default | 0.58 | 200ms |
-| XGB Regressor| Default | 0.64 | 200ms |
-| Decision Tree Regressor| ('max_depth', 25), ('max_features', None), ('max_leaf_nodes', 10), ('min_samples_leaf', 4), ('min_weight_fraction_leaf', 0.0), ('splitter', 'best') | 0.69 | 200ms |
-| Ridge| ('alpha', 90) | 0.61 | 200ms |
-| Lasso| ('alpha', 0.1) | 0.57 | 200ms |
-| PCA (with Linear Regression)| ('n_components', 24) | 0.63 | 200ms |
-| ADA Boosting (with Decision Tree Regressor)| ('n_estimators', 300) | 0.62 | 200ms |
+| Ridge | Default | 0.58 | 80ms |
+| Lasso | Default | 0.76 | 80ms |
+| Linear Regression| Default | 0.58 | 80ms |
+| XGB Regressor| Default | 0.64 | 100ms |
+| Decision Tree Regressor| ('max_depth', 25), ('max_features', None), ('max_leaf_nodes', 10), ('min_samples_leaf', 4), ('min_weight_fraction_leaf', 0.0), ('splitter', 'best') | 0.69 | 50ms |
+| Ridge| ('alpha', 90) | 0.61 | 80ms |
+| Lasso| ('alpha', 0.1) | 0.57 | 80ms |
+| PCA (with Linear Regression)| ('n_components', 24) | 0.63 | 50ms |
+| ADA Boosting (with Decision Tree Regressor)| ('n_estimators', 300) | 0.62 | 1000ms |
 
 #### Eliminant outliers
 | Model | Hiperparametres | Mètrica (RMSE) | Temps |
 | -- | -- | -- | -- |
 | Decision Tree Regressor | Default | 0.78 | 100ms |
-| Ridge | Default | 0.58 | 1000ms |
-| Lasso | Default | 0.60 | 200ms |
-| Linear Regression| Default | 0.58 | 200ms |
-| XGB Regressor| Default | 0.63 | 200ms |
-| Decision Tree Regressor| ('max_depth', 21), ('max_features', None), ('max_leaf_nodes', 10), ('min_samples_leaf', 8), ('min_weight_fraction_leaf', 0.0), ('splitter', 'best') | 0.60 | 200ms |
-| Ridge| ('alpha', 104) | 0.56 | 200ms |
-| Lasso| ('alpha', 0.1) | 0.57 | 200ms |
-| PCA (with Linear Regression)| ('n_components', 11) | 0.58 | 200ms |
-| ADA Boosting (with Decision Tree Regressor)| ('n_estimators', 300) | 0.60 | 200ms |
-| ADA Boosting (with Decision Tree Regressor)| ADA Boosting = ('n_estimators', 300) & Decision Tree Regressor = ('max_depth', 7), ('max_features', 'auto'), ('max_leaf_nodes', 20), ('min_samples_leaf', 5), ('min_weight_fraction_leaf', 0.0), ('splitter', 'best') | 0.58 | 200ms |
+| Ridge | Default | 0.58 | 80ms |
+| Lasso | Default | 0.60 | 80ms |
+| Linear Regression| Default | 0.58 | 80ms |
+| XGB Regressor| Default | 0.63 | 100ms |
+| Decision Tree Regressor| ('max_depth', 21), ('max_features', None), ('max_leaf_nodes', 10), ('min_samples_leaf', 8), ('min_weight_fraction_leaf', 0.0), ('splitter', 'best') | 0.60 | 50ms |
+| Ridge| ('alpha', 104) | 0.56 | 80ms |
+| Lasso| ('alpha', 0.1) | 0.57 | 80ms |
+| PCA (with Linear Regression)| ('n_components', 11) | 0.58 | 50ms |
+| ADA Boosting (with Decision Tree Regressor)| ('n_estimators', 300) | 0.60 | 1000ms |
+| ADA Boosting (with Decision Tree Regressor)| ADA Boosting = ('n_estimators', 300) & Decision Tree Regressor = ('max_depth', 7), ('max_features', 'auto'), ('max_leaf_nodes', 20), ('min_samples_leaf', 5), ('min_weight_fraction_leaf', 0.0), ('splitter', 'best') | 0.58 | 950ms |
 
+## Conclusions
+S'ha vist que utilitzant tots els atributs, la predicció de la nota final és relativament bona. El problema, però, és que part d'aquests atributs són les notes que ha anat treient durant el curs.
 
+Quan es treuen les notes i només es fa l'entrenament amb les dades que s'han aconseguit fent l'enquesta als alumnes, les prediccions són molt més dolentes. L'error és de += 1.3 de mitjana, significant que quan la nota és un 6, es podria predir des d'un 4.7 fins a un 7.3.
+
+També s'ha pogut veure que els atributs amb dades relacionaes amb el consum d'alcohol aporten molt poca informació. S'aconsegueix el mateix resultat utilitzant-los i no utilitzant-los.
+
+Cal dir que el dataset amb el que es treballa té molt poques mostres i totes d'un mateix poble. És molt probable que si es tingués informació d'una regió més gran i més quantitat, les prediccions podríen millorar. Segurament també es podria trobar algun patró significatiu entre el consum d'alcohol i el rendiment escolar.
 
