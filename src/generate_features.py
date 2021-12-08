@@ -1,29 +1,7 @@
-import os
-import pickle
-from sklearn.metrics import mean_squared_error
-
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from collections import Counter
 import numpy as np
-
-def main():
-    dir = '../models'
-    files = []
-    for file in os.listdir("../models"):
-        if file.endswith(".sav"):
-            if 'PCA' in str(file):
-                continue
-            files.append(os.path.join(dir, file))
-
-    x_train, x_test, y_train, y_test = getProcessedData()
-
-
-    for file in files:
-        loaded_model = pickle.load(open(file, 'rb'))
-        y_pred = loaded_model.predict(x_test)
-        print('\n', file)
-        print('RMSE: ', np.sqrt(mean_squared_error(y_test, y_pred))/2)
 
 
 def detectOutliers(df, atributs, maxOutliers):
@@ -55,11 +33,13 @@ def detectOutliers(df, atributs, maxOutliers):
 
     return indexsDrop
 
-
 def deleteRowsByIndex(df, indexs):
     rows = df.index[indexs]
     df.drop(rows, inplace=True)
     return df
+
+
+
 
 
 def getProcessedData():
@@ -75,14 +55,13 @@ def getProcessedData():
     db = deleteRowsByIndex(db, detectOutliers(db, ["age", "Dalc", "Walc", "absences"], 0))
     y = db['G3']
     x = db.drop(columns='G3')
-
     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.15, random_state=9)
     return x_train, x_test, y_train, y_test
 
 
+def main():
+    getProcessedData()
+
+
 if __name__ == '__main__':
     main()
-
-
-
-
