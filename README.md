@@ -43,13 +43,21 @@ Abans d'executar els models s'han preprocessat les dades amb les que es treballa
 ### Demo
 Es pot executar una demo que carrega models prèviament entrenats i prediu dades mai abans vistes
 Clonar el repositori
-```git clone https://github.com/marti1999/APC-Cas-Kaggle.git```
+```bash
+git clone https://github.com/marti1999/APC-Cas-Kaggle.git
+```
 Anar al directori
-```cd PC-Cas-Kaggle```
+```bash
+cd PC-Cas-Kaggle
+```
 Instal·lar dependències
-```python3 -m pip install -r requirements.txt```
+```bash
+python3 -m pip install -r requirements.txt
+```
 Executar els models
-```python3 ./demo/demo.py```
+```bash
+python3 ./demo/demo.py
+```
 
 ### Model
 
