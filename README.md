@@ -124,11 +124,13 @@ Tots els resultats mostrats a continuació són fruit de fer un cross validation
 | ADA Boosting (with Decision Tree Regressor)| ADA Boosting = ('n_estimators', 300) & Decision Tree Regressor = ('max_depth', 7), ('max_features', 'auto'), ('max_leaf_nodes', 20), ('min_samples_leaf', 5), ('min_weight_fraction_leaf', 0.0), ('splitter', 'best') | 0.58 | 950ms |
 
 ## Conclusions
-S'ha vist que utilitzant tots els atributs, la predicció de la nota final és relativament bona. El problema, però, és que part d'aquests atributs són les notes que ha anat treient durant el curs. Adicionalment, dedicar temps a la cerca dels millor paràmetres o tècniques més avançades com "Ensambles" porta a millors resultats.
+S'ha vist que utilitzant tots els atributs, la predicció de la nota final és relativament bona. El problema, però, és que part d'aquests atributs són les notes que ha anat treient durant el curs.
 
 Quan es treuen les notes i només es fa l'entrenament amb les dades que s'han aconseguit fent l'enquesta als alumnes, les prediccions són molt més dolentes. L'error és de += 1.3 de mitjana, significant que quan la nota és un 6, es podria predir des d'un 4.7 fins a un 7.3.
 
-També s'ha pogut veure que els atributs amb dades relacionades amb el consum d'alcohol aporten molt poca informació. S'aconsegueix el mateix resultat utilitzant-los i no utilitzant-los.
+També s'ha pogut veure que els atributs amb dades relacionaes amb el consum d'alcohol aporten molt poca informació. S'aconsegueix el mateix resultat utilitzant-los i no utilitzant-los.
+
+Per una altra banda, no sempre el millor resultat s'aconsegueix triant el millor model a entrenar, sinó fent els aprenentatges adequats. Un clar exemple s'ha vist amb el Decision Tree Regressor. Ha començat sent el pitjor model gràcies al Boosting i al Hyperparameter Search ha aconseguit obtenir millor puntuació que els basats en regressió lineal.
 
 Cal dir que el dataset amb el que es treballa té molt poques mostres i totes d'un mateix poble. És molt probable que si es tingués informació d'una regió més gran i més quantitat, les prediccions podríen millorar. Segurament també es podria trobar algun patró significatiu entre el consum d'alcohol i el rendiment escolar.
 
